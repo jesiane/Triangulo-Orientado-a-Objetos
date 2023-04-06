@@ -4,15 +4,17 @@
     {
         static void Main(string[] args)
         {
-            Triangulos triangulos = new Triangulos();
+            Console.WriteLine("Digite 3 numeros\n");
+            int ladoA = int.Parse(Console.ReadLine());
+            int ladoB = int.Parse(Console.ReadLine());
+            int ladoC = int.Parse(Console.ReadLine());
 
-            triangulos.ladoA = 7;
-            triangulos.ladoB = 8;
-            triangulos.ladoC = 9;
+            Triangulos triangulo = new Triangulos(ladoA, ladoB, ladoC);
+            string tipo = triangulo.CalcularTriangulos();
 
+            Console.WriteLine(tipo);
 
-            Console.WriteLine(triangulos.CalculoTriangulos());
-            
+            Console.ReadKey();
         }
     }
 }

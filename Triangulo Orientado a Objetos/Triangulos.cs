@@ -13,24 +13,27 @@ namespace Triangulo_Orientado_a_Objetos
         public int ladoB;
         public int ladoC;
 
-        public int CalculoTriangulos()
+        public Triangulos(int ladoA, int ladoB, int ladoC)
+        {
+            this.ladoA = ladoA;
+            this.ladoB = ladoB;
+            this.ladoC = ladoC;
+        }
+
+        public string CalcularTriangulos()
         {
             if (ladoA + ladoB > ladoC && ladoA + ladoC > ladoB && ladoB + ladoC > ladoA)
             {
-                Console.WriteLine("Os 3 lados formam um triangulo!\n");
-                if (ladoA == ladoB && ladoA == ladoC)
-                    Console.WriteLine("Equilatero\n");
+                 if (ladoA == ladoB && ladoA == ladoC)
+                   return "Equilatero";
                 else
                     if (ladoA == ladoB || ladoA == ladoC || ladoB == ladoC)
-                    Console.WriteLine("Isosceles\n");
+                    return "Isosceles";
                 else
-                    Console.WriteLine("Escaleno\n");
+                    return "Escaleno";
             }
             else
-                Console.WriteLine("Triangulo invalido!\n");
-
-            return 0;
+                return "Triangulo invalido!";
         }
     }
 }
-
